@@ -71,3 +71,10 @@ Result:
 
 ...
 ```
+
+## TODOs
+
+- Add Selenium (headless browser) module
+- Add basic scrapping use cases
+- Add manual CAPTCHA completion
+- Create CLI + GUI (using [Gooey](https://github.com/chriskiehl/Gooey))
