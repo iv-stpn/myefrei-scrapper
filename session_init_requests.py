@@ -158,7 +158,8 @@ def refresh_moodle_session():
     check_or_exit(match_oauth_link,
                   "OAuth link not found in page (was expected)!")
     oauth_link = match_oauth_link.group(1)
-    logger.info(f"Successfully retrieved OAuth link: {oauth_link}!")
+    logger.info(f"Successfully retrieved OAuth link!")
+    logger.debug(f"Link: {oauth_link}")
 
     session.get(oauth_link)
     logger.debug(f"Cookies:\n{pprint.pformat(session.cookies.get_dict())}")
@@ -167,5 +168,8 @@ def refresh_moodle_session():
     return session
 
 
+# A session that can query on myefrei.fr
+# session = refresh_myefrei_session()
+
 # A session that can query both on myefrei.fr and moodle.myefrei.fr
-session = refresh_moodle_session()
+# session = refresh_moodle_session()
